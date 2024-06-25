@@ -1,36 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+/* Importação de fontes */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
-
+/* Reset CSS */
 * {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
 
+/* Estilos do corpo */
 body {
-    height: 100vh;
-    background: url("coffee.jpg");
+    background: url("assets/coffee.jpg");
     background-position: center;
     background-size: cover;
+    height: 100vh;
 }
 
+/* Estilos do cabeçalho */
 header {
+    left: 0;
+    padding: 20px;
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
-    padding: 20px;
 }
 
 header .navbar {
-    display: flex;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+    display: flex;
     justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
+/* Estilos do menu */
 .navbar .logo {
     color: #ffffff;
     font-size: 2.1rem;
@@ -39,13 +43,11 @@ header .navbar {
 
 .navbar .logo span {
     color: #c06b3e;
-
 }
 
 .navbar .menu-links {
     display: flex;
     gap: 40px;
-
 }
 
 .navbar .menu-links li {
@@ -62,20 +64,19 @@ header .navbar {
     color: #c06b3e;
 }
 
-
+/* Estilos da seção herói */
 .hero-section {
-    height: 100vh;
-    display: flex;
     align-items: center;
+    display: flex;
+    height: 100vh;
     padding: 0 20px;
 }
 
-
 .hero-section .content {
     color: #ffffff;
+    margin: 0 auto;
     max-width: 1200px;
     width: 100%;
-    margin: 0 auto;
 }
 
 .hero-section .content h1 {
@@ -91,22 +92,100 @@ header .navbar {
 
 .hero-section .content button {
     background: #ffffff;
-    outline: none;
     border: none;
+    border-radius: 6px;
+    cursor: pointer;
     font-size: 1rem;
     font-weight: 500;
     margin-top: 38px;
+    outline: none;
     padding: 12px 30px;
-    border-radius: 6px;
-    cursor: pointer;
     transition: 0.2s ease;
 }
 
 .hero-section .content button:hover {
-    color: #ffffff;
     background: #c06b3e;
+    color: #ffffff;
 }
 
+/* Estilos do modal */
+.modal {
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    height: 100%;
+    left: 0;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.modal-content {
+    align-items: center;
+    background-color: #fefefe;
+    border: 1px solid #888;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    padding: 20px;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 500px;
+}
+
+.modal-content label {
+    align-self: flex-start;
+    margin-top: 10px;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="email"],
+.modal-content textarea {
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    margin-top: 5px;
+    padding: 10px;
+    width: 100%;
+}
+
+.modal-content textarea {
+    height: 150px;
+}
+
+.modal-content input[type="submit"] {
+    background-color: #c06b3e;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content input[type="submit"]:hover {
+    background-color: #9a5530;
+}
+
+.close {
+    color: #aaa;
+    cursor: pointer;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+
+/* Estilos do botão de menu */
 #menu-btn {
     color: #ffffff;
     cursor: pointer;
@@ -114,28 +193,75 @@ header .navbar {
 }
 
 #close-menu-btn {
+    cursor: pointer;
     display: none;
     position: absolute;
-    cursor: pointer;
     right: 20px;
     top: 20px;
 }
 
+/* Estilos do modal de confirmação */
+#confirmationModal {
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    height: 100%;
+    left: 0;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+#confirmationModal .modal-content {
+    align-items: center;
+    background-color: #fefefe;
+    border: 1px solid #888;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    padding: 20px;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px;
+}
+
+#confirmationModal .modal-content p {
+    margin-bottom: 20px;
+}
+
+#confirmationModal .modal-content button {
+    background-color: #c06b3e;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+#confirmationModal .modal-content button:hover {
+    background-color: #9a5530;
+}
+
+/* Estilos de mídia */
 @media screen and (max-width: 900px) {
-    #close-menu-btn, #menu-btn {
+    #close-menu-btn,
+    #menu-btn {
         display: block;
     }
 
-
     .navbar .menu-links {
-        position: fixed;
-        left: -260px;
-        top: 0;
-        flex-direction: column;
-        width: 260px;
-        height: 100vh;
         background: #ffffff;
+        flex-direction: column;
+        height: 100vh;
+        left: -260px;
         padding: 70px 40px 0;
+        position: fixed;
+        top: 0;
+        width: 260px;
     }
 
     .navbar a {
